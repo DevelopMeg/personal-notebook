@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 
 const CreateNote = (props) => {
   const { titleNote, contentNote, keywordsNote, keywordsList } = props.infoNote;
@@ -52,6 +52,8 @@ const CreateNote = (props) => {
             titleNote.length === 0 || contentNote.length === 0 ? true : false
           }
         />
+
+        {props.statusAddNote ? <Redirect to="/added-note" /> : null}
       </form>
     </section>
   );

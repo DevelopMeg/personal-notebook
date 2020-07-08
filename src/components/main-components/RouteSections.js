@@ -99,6 +99,12 @@ class RouteSections extends Component {
     }));
   };
 
+  clearStatusAddNote = () => {
+    this.setState({
+      statusAddNote: false,
+    });
+  };
+
   render() {
     return (
       <Switch>
@@ -113,6 +119,7 @@ class RouteSections extends Component {
                 handleAddNote={this.handleAddNote}
                 handleAddKeyword={this.handleAddKeyword}
                 clearField={this.clearField}
+                statusAddNote={this.state.statusAddNote}
               />
             );
           }}
@@ -120,7 +127,7 @@ class RouteSections extends Component {
         <Route
           path="/added-note"
           render={() => {
-            return <AddedNote />;
+            return <AddedNote clearStatusAddNote={this.clearStatusAddNote} />;
           }}
         />
         <Route

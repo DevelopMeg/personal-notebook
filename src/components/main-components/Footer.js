@@ -5,7 +5,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="copyright">
         <p className="copyright__text">
-          DevelopMeg 2019 &copy; All right reserved
+          DevelopMeg 2020 &copy; All right reserved
         </p>
       </div>
     </footer>

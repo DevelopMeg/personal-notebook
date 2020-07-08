@@ -5,8 +5,12 @@ const ChooseAction = (props) => {
   return (
     <>
       <p>ChooseAction</p>
-      <NavLink to="/your-notes">your notes</NavLink>
-      <NavLink to="/new-note">create new note</NavLink>
+      <NavLink to="/your-notes" onClick={props.clearStatusAddNote}>
+        your notes
+      </NavLink>
+      <NavLink to="/new-note" onClick={props.clearStatusAddNote}>
+        create new note
+      </NavLink>
     </>
   );
 };
