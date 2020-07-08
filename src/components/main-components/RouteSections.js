@@ -9,7 +9,28 @@ import EditNoteBox from "../route-components/EditNoteBox";
 import NoPage from "../route-components/NoPage";
 
 class RouteSections extends Component {
-  state = {};
+  state = {
+    infoNote: {
+      titleNote: "",
+      contentNote: "",
+      keywordsNote: "",
+      keywordsList: [],
+    },
+  };
+
+  // handle label
+
+  handleChangeValueInfoNote = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        [name]: value,
+      },
+    }));
+  };
 
   render() {
     return (
@@ -18,7 +39,12 @@ class RouteSections extends Component {
         <Route
           path="/new-note"
           render={() => {
-            return <CreateNote />;
+            return (
+              <CreateNote
+                infoNote={this.state.infoNote}
+                handleChangeValueInfoNote={this.handleChangeValueInfoNote}
+              />
+            );
           }}
         />
         <Route
