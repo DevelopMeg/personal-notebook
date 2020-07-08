@@ -16,6 +16,8 @@ class RouteSections extends Component {
       keywordsNote: "",
       keywordsList: [],
     },
+    statusAddNote: false,
+    notesList: [],
   };
 
   // handle label
@@ -32,6 +34,71 @@ class RouteSections extends Component {
     }));
   };
 
+  // add note
+
+  handleAddNote = (e) => {
+    e.preventDefault();
+
+    const { titleNote, contentNote, keywordsList } = this.state.infoNote;
+
+    const generateId = Math.random().toString(36).substr(2, 9);
+
+    const date = new Date();
+    const noteDate = date.toLocaleString();
+
+    let notesList = [...this.state.notesList];
+
+    notesList.push({
+      id: generateId,
+      title: `${titleNote}`,
+      content: `${contentNote}`,
+      keywords: `${keywordsList}`,
+      date: noteDate,
+    });
+
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        titleNote: "",
+        contentNote: "",
+        keywordsList: [],
+      },
+      statusAddNote: true,
+      notesList,
+    }));
+  };
+
+  // add keyword to note
+
+  handleAddKeyword = (e) => {
+    e.preventDefault();
+
+    const keywordsList = [...this.state.infoNote.keywordsList];
+
+    keywordsList.push(`#${this.state.infoNote.keywordsNote}`);
+
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        keywordsNote: "",
+        keywordsList,
+      },
+    }));
+  };
+
+  // clear
+
+  clearField = () => {
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        titleNote: "",
+        contentNote: "",
+        keywordsList: [],
+      },
+    }));
+  };
+
   render() {
     return (
       <Switch>
@@ -43,6 +110,9 @@ class RouteSections extends Component {
               <CreateNote
                 infoNote={this.state.infoNote}
                 handleChangeValueInfoNote={this.handleChangeValueInfoNote}
+                handleAddNote={this.handleAddNote}
+                handleAddKeyword={this.handleAddKeyword}
+                clearField={this.clearField}
               />
             );
           }}

@@ -7,8 +7,10 @@ const CreateNote = (props) => {
   return (
     <section>
       <h2>Create new note</h2>
-      <NavLink to="/">come back</NavLink>
-      <form>
+      <NavLink to="/" onClick={props.clearField}>
+        come back
+      </NavLink>
+      <form onSubmit={props.handleAddNote}>
         <label htmlFor="title">title</label>
         <input
           type="text"
@@ -34,11 +36,22 @@ const CreateNote = (props) => {
             onChange={props.handleChangeValueInfoNote}
             value={keywordsNote}
           />
-          <button>add keyword</button>
+          <button
+            onClick={props.handleAddKeyword}
+            disabled={keywordsNote.length === 0 ? true : false}
+          >
+            add keyword
+          </button>
           <div className="keyword-list">{keywordsList}</div>
         </div>
 
-        <input type="submit" value="add note" />
+        <input
+          type="submit"
+          value="add note"
+          disabled={
+            titleNote.length === 0 || contentNote.length === 0 ? true : false
+          }
+        />
       </form>
     </section>
   );
