@@ -133,7 +133,7 @@ class RouteSections extends Component {
         <Route
           path="/your-notes"
           render={() => {
-            return <Notes />;
+            return <Notes notesList={this.state.notesList} />;
           }}
         />
         <Route
