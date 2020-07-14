@@ -14,7 +14,13 @@ const Notes = (props) => {
       </NavLink>
       <h2>your notes</h2>
 
-      <SearchNotes />
+      <SearchNotes
+        handleChooseSearchCategory={props.handleChooseSearchCategory}
+        chooseSearchCategory={props.chooseSearchCategory}
+        clearSearchCategory={props.clearSearchCategory}
+        valueSearchNote={props.valueSearchNote}
+        handleChangeValueSearchNote={props.handleChangeValueSearchNote}
+      />
 
       <SortNotes />
 

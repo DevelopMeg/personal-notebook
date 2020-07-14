@@ -18,6 +18,9 @@ class RouteSections extends Component {
     },
     statusAddNote: false,
     notesList: [],
+
+    chooseSearchCategory: "",
+    valueSearchNote: "",
   };
 
   // handle label
@@ -32,6 +35,20 @@ class RouteSections extends Component {
         [name]: value,
       },
     }));
+  };
+
+  handleChooseSearchCategory = (e) => {
+    const category = e.target.innerText;
+
+    this.setState({
+      chooseSearchCategory: category,
+    });
+  };
+
+  handleChangeValueSearchNote = (e) => {
+    this.setState({
+      valueSearchNote: e.target.value,
+    });
   };
 
   // add note
@@ -105,7 +122,22 @@ class RouteSections extends Component {
     });
   };
 
+  clearSearchCategory = () => {
+    this.setState({
+      chooseSearchCategory: "",
+      valueSearchNote: "",
+    });
+  };
+
   render() {
+    const {
+      notesList,
+      infoNote,
+      statusAddNote,
+      chooseSearchCategory,
+      valueSearchNote,
+    } = this.state;
+
     return (
       <Switch>
         <Route path="/" exact component={WelcomeSection} />
@@ -114,12 +146,12 @@ class RouteSections extends Component {
           render={() => {
             return (
               <CreateNote
-                infoNote={this.state.infoNote}
+                infoNote={infoNote}
                 handleChangeValueInfoNote={this.handleChangeValueInfoNote}
                 handleAddNote={this.handleAddNote}
                 handleAddKeyword={this.handleAddKeyword}
                 clearField={this.clearField}
-                statusAddNote={this.state.statusAddNote}
+                statusAddNote={statusAddNote}
               />
             );
           }}
@@ -133,7 +165,16 @@ class RouteSections extends Component {
         <Route
           path="/your-notes"
           render={() => {
-            return <Notes notesList={this.state.notesList} />;
+            return (
+              <Notes
+                notesList={notesList}
+                handleChooseSearchCategory={this.handleChooseSearchCategory}
+                chooseSearchCategory={chooseSearchCategory}
+                clearSearchCategory={this.clearSearchCategory}
+                valueSearchNote={valueSearchNote}
+                handleChangeValueSearchNote={this.handleChangeValueSearchNote}
+              />
+            );
           }}
         />
         <Route
