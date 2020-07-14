@@ -21,6 +21,8 @@ class RouteSections extends Component {
 
     chooseSearchCategory: "",
     valueSearchNote: "",
+
+    valueSortNote: "",
   };
 
   // handle label
@@ -45,9 +47,12 @@ class RouteSections extends Component {
     });
   };
 
-  handleChangeValueSearchNote = (e) => {
+  handleChangeValue = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+
     this.setState({
-      valueSearchNote: e.target.value,
+      [name]: value,
     });
   };
 
@@ -136,6 +141,7 @@ class RouteSections extends Component {
       statusAddNote,
       chooseSearchCategory,
       valueSearchNote,
+      valueSortNote,
     } = this.state;
 
     return (
@@ -172,7 +178,8 @@ class RouteSections extends Component {
                 chooseSearchCategory={chooseSearchCategory}
                 clearSearchCategory={this.clearSearchCategory}
                 valueSearchNote={valueSearchNote}
-                handleChangeValueSearchNote={this.handleChangeValueSearchNote}
+                valueSortNote={valueSortNote}
+                handleChangeValue={this.handleChangeValue}
               />
             );
           }}

@@ -19,10 +19,13 @@ const Notes = (props) => {
         chooseSearchCategory={props.chooseSearchCategory}
         clearSearchCategory={props.clearSearchCategory}
         valueSearchNote={props.valueSearchNote}
-        handleChangeValueSearchNote={props.handleChangeValueSearchNote}
+        handleChangeValue={props.handleChangeValue}
       />
 
-      <SortNotes />
+      <SortNotes
+        handleChangeValue={props.handleChangeValue}
+        valueSortNote={props.valueSortNote}
+      />
 
       <CountNotes notesList={props.notesList} />
 
