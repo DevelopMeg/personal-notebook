@@ -20,6 +20,7 @@ const Notes = (props) => {
         clearSearchCategory={props.clearSearchCategory}
         valueSearchNote={props.valueSearchNote}
         handleChangeValue={props.handleChangeValue}
+        handleSearchNote={props.handleSearchNote}
       />
 
       <SortNotes

@@ -14,7 +14,10 @@ const SearchNotes = (props) => {
         type="text"
         name="valueSearchNote"
         value={props.valueSearchNote}
-        onChange={props.handleChangeValue}
+        onChange={(e) => {
+          props.handleChangeValue(e);
+          props.handleSearchNote(e);
+        }}
         disabled={!props.chooseSearchCategory ? true : false}
       />
     </div>

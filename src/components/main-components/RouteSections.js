@@ -18,6 +18,7 @@ class RouteSections extends Component {
     },
     statusAddNote: false,
     notesList: [],
+    filterNotesList: [],
 
     chooseSearchCategory: "",
     valueSearchNote: "",
@@ -108,6 +109,22 @@ class RouteSections extends Component {
     }));
   };
 
+  // search note
+
+  handleSearchNote = (e) => {
+    let filterNotesList = [...this.state.notesList];
+
+    filterNotesList = filterNotesList.filter((note, id) => {
+      const searchCategory = note[this.state.chooseSearchCategory];
+
+      return searchCategory.includes(e.target.value);
+    });
+
+    this.setState({
+      filterNotesList,
+    });
+  };
+
   // clear
 
   clearField = () => {
@@ -180,6 +197,7 @@ class RouteSections extends Component {
                 valueSearchNote={valueSearchNote}
                 valueSortNote={valueSortNote}
                 handleChangeValue={this.handleChangeValue}
+                handleSearchNote={this.handleSearchNote}
               />
             );
           }}
