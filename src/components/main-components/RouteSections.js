@@ -19,12 +19,76 @@ class RouteSections extends Component {
     statusAddNote: false,
     notesList: [],
     filterNotesList: [],
+    sortNotesList: [],
 
     chooseSearchCategory: "",
     valueSearchNote: "",
 
-    valueSortNote: "",
+    valueSortNote: "default",
   };
+
+  // sort notes
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.valueSortNote !== this.state.valueSortNote) {
+      const notesList = [...this.state.notesList];
+      let sortNotesList;
+
+      const { valueSortNote } = this.state;
+
+      if (valueSortNote === "default") {
+        sortNotesList = [];
+      } else {
+        let sortBy;
+        if (valueSortNote === "Title A-Z") {
+          sortBy = (a, b) => {
+            if (a.title < b.title) {
+              return -1;
+            }
+            if (a.title > b.title) {
+              return 1;
+            }
+            return 0;
+          };
+        } else if (valueSortNote === "Title Z-A") {
+          sortBy = (a, b) => {
+            if (a.title < b.title) {
+              return 1;
+            }
+            if (a.title > b.title) {
+              return -1;
+            }
+            return 0;
+          };
+        } else if (valueSortNote === "Earliest Date") {
+          sortBy = (a, b) => {
+            if (a.date < b.date) {
+              return -1;
+            }
+            if (a.date > b.date) {
+              return 1;
+            }
+            return 0;
+          };
+        } else if (valueSortNote === "Latest Date") {
+          sortBy = (a, b) => {
+            if (a.date < b.date) {
+              return 1;
+            }
+            if (a.date > b.date) {
+              return -1;
+            }
+            return 0;
+          };
+        }
+        sortNotesList = notesList.sort(sortBy);
+      }
+
+      this.setState({
+        sortNotesList,
+      });
+    }
+  }
 
   // handle label
 
