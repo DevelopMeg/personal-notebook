@@ -39,7 +39,11 @@ const Notes = (props) => {
 
       <CountNotes notesList={props.notesList} />
 
-      {props.notesList.length !== 0 ? <StickyNotes list={list} /> : <NoNotes />}
+      {props.notesList.length !== 0 ? (
+        <StickyNotes list={list} handleDeleteNote={props.handleDeleteNote} />
+      ) : (
+        <NoNotes />
+      )}
     </>
   );
 };

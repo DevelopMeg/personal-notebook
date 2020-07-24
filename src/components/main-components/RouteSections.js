@@ -189,6 +189,23 @@ class RouteSections extends Component {
     });
   };
 
+  // delete note with sticky
+
+  handleDeleteNote = (e) => {
+    const idStickyNote = e.target.parentNode.id;
+    const notesList = [...this.state.notesList];
+
+    const idDeleteNote = notesList.findIndex((note, id) => {
+      return idStickyNote === note.id;
+    });
+
+    notesList.splice(idDeleteNote, 1);
+
+    this.setState({
+      notesList,
+    });
+  };
+
   // clear
 
   clearField = () => {
@@ -266,6 +283,7 @@ class RouteSections extends Component {
                 handleSearchNote={this.handleSearchNote}
                 filterNotesList={filterNotesList}
                 sortNotesList={sortNotesList}
+                handleDeleteNote={this.handleDeleteNote}
               />
             );
           }}

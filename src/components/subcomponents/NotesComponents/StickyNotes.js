@@ -3,7 +3,13 @@ import StickyNote from "./StickyNote";
 
 const StickyNotes = (props) => {
   const stickyNote = props.list.map((note, id) => {
-    return <StickyNote key={id} note={note} />;
+    return (
+      <StickyNote
+        key={id}
+        note={note}
+        handleDeleteNote={props.handleDeleteNote}
+      />
+    );
   });
   return <section className="sticky-note">{stickyNote}</section>;
 };
