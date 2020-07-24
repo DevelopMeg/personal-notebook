@@ -223,6 +223,8 @@ class RouteSections extends Component {
       chooseSearchCategory,
       valueSearchNote,
       valueSortNote,
+      filterNotesList,
+      sortNotesList,
     } = this.state;
 
     return (
@@ -262,6 +264,8 @@ class RouteSections extends Component {
                 valueSortNote={valueSortNote}
                 handleChangeValue={this.handleChangeValue}
                 handleSearchNote={this.handleSearchNote}
+                filterNotesList={filterNotesList}
+                sortNotesList={sortNotesList}
               />
             );
           }}

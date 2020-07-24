@@ -7,6 +7,15 @@ import StickyNotes from "../subcomponents/NotesComponents/StickyNotes";
 import NoNotes from "../subcomponents/NotesComponents/NoNotes";
 
 const Notes = (props) => {
+  let list;
+  if (props.valueSearchNote.length !== 0) {
+    list = props.filterNotesList;
+  } else if (props.sortNotesList.length !== 0) {
+    list = props.sortNotesList;
+  } else {
+    list = props.notesList;
+  }
+
   return (
     <>
       <NavLink to="/" exact>
@@ -30,7 +39,7 @@ const Notes = (props) => {
 
       <CountNotes notesList={props.notesList} />
 
-      {props.notesList.length !== 0 ? <StickyNotes /> : <NoNotes />}
+      {props.notesList.length !== 0 ? <StickyNotes list={list} /> : <NoNotes />}
     </>
   );
 };
