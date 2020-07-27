@@ -18,13 +18,14 @@ class RouteSections extends Component {
     },
     statusAddNote: false,
     notesList: [],
+
     filterNotesList: [],
     sortNotesList: [],
-
     chooseSearchCategory: "",
     valueSearchNote: "",
-
     valueSortNote: "default",
+
+    idChooseNote: "",
   };
 
   // sort notes
@@ -171,6 +172,14 @@ class RouteSections extends Component {
         keywordsList,
       },
     }));
+  };
+
+  // whole note - more info
+
+  handleChooseWholeNote = (id) => {
+    this.setState({
+      idChooseNote: id,
+    });
   };
 
   // search note

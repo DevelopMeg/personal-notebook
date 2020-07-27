@@ -8,6 +8,7 @@ const StickyNotes = (props) => {
         key={id}
         note={note}
         handleDeleteNote={props.handleDeleteNote}
+        handleChooseWholeNote={props.handleChooseWholeNote}
       />
     );
   });
