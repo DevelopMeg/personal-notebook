@@ -293,6 +293,7 @@ class RouteSections extends Component {
                 filterNotesList={filterNotesList}
                 sortNotesList={sortNotesList}
                 handleDeleteNote={this.handleDeleteNote}
+                handleChooseWholeNote={this.handleChooseWholeNote}
               />
             );
           }}
@@ -300,7 +301,12 @@ class RouteSections extends Component {
         <Route
           path="/your-note"
           render={() => {
-            return <NoteBox />;
+            return (
+              <NoteBox
+                notesList={this.state.notesList}
+                idChooseNote={this.state.idChooseNote}
+              />
+            );
           }}
         />
         <Route
