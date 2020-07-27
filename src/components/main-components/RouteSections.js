@@ -217,6 +217,12 @@ class RouteSections extends Component {
 
   // clear
 
+  clearIdChooseNote = () => {
+    this.setState({
+      idChooseNote: "",
+    });
+  };
+
   clearField = () => {
     this.setState((prevState) => ({
       infoNote: {
@@ -305,6 +311,8 @@ class RouteSections extends Component {
               <NoteBox
                 notesList={this.state.notesList}
                 idChooseNote={this.state.idChooseNote}
+                clearIdChooseNote={this.clearIdChooseNote}
+                clearField={this.clearField}
               />
             );
           }}
