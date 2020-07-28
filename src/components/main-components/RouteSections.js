@@ -336,7 +336,12 @@ class RouteSections extends Component {
         <Route
           path="/edit-note"
           render={() => {
-            return <EditNoteBox />;
+            return (
+              <EditNoteBox
+                notesList={this.state.notesList}
+                idChooseNote={this.state.idChooseNote}
+              />
+            );
           }}
         />
         <Route component={NoPage} />
