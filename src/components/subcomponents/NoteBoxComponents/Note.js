@@ -19,6 +19,18 @@ const Note = (props) => {
       <p>{props.note.date}</p>
       <p>{props.note.keywords}</p>
       <p>{props.note.content}</p>
+      <NavLink
+        to="/edit-note"
+        onClick={() => {
+          props.handleEditFillField(
+            props.note.title,
+            props.note.content,
+            props.note.keywords
+          );
+        }}
+      >
+        edit
+      </NavLink>
     </section>
   );
 };

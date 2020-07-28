@@ -215,6 +215,21 @@ class RouteSections extends Component {
     });
   };
 
+  // edit note
+
+  handleEditFillField = (title, content, keywords) => {
+    const keywordsList = keywords.split(",");
+
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        titleNote: title,
+        contentNote: content,
+        keywordsList,
+      },
+    }));
+  };
+
   // clear
 
   clearIdChooseNote = () => {
@@ -313,6 +328,7 @@ class RouteSections extends Component {
                 idChooseNote={this.state.idChooseNote}
                 clearIdChooseNote={this.clearIdChooseNote}
                 clearField={this.clearField}
+                handleEditFillField={this.handleEditFillField}
               />
             );
           }}
