@@ -17,6 +17,7 @@ const EditNoteBox = (props) => {
         handleAddKeyword={props.handleAddKeyword}
         statusAddEditNote={props.statusAddEditNote}
         handleSaveEditNote={props.handleSaveEditNote}
+        handleDeleteKeyword={props.handleDeleteKeyword}
       />
     );
   });

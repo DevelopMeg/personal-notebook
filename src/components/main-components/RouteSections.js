@@ -261,6 +261,24 @@ class RouteSections extends Component {
     });
   };
 
+  handleDeleteKeyword = (e) => {
+    const parent = parseInt(e.target.parentNode.id);
+    const keywordsList = [...this.state.infoNote.keywordsList];
+
+    const idDeleteKeyword = keywordsList.findIndex((keyword, id) => {
+      return parent === id;
+    });
+
+    keywordsList.splice(idDeleteKeyword, 1);
+
+    this.setState((prevState) => ({
+      infoNote: {
+        ...prevState.infoNote,
+        keywordsList,
+      },
+    }));
+  };
+
   // clear
 
   clearIdChooseNote = () => {
@@ -384,6 +402,7 @@ class RouteSections extends Component {
                 statusAddEditNote={this.state.statusAddEditNote}
                 handleAddKeyword={this.handleAddKeyword}
                 handleSaveEditNote={this.handleSaveEditNote}
+                handleDeleteKeyword={this.handleDeleteKeyword}
               />
             );
           }}
