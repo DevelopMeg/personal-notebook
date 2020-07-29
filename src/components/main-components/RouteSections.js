@@ -231,6 +231,36 @@ class RouteSections extends Component {
     }));
   };
 
+  handleSaveEditNote = (e) => {
+    e.preventDefault();
+
+    const { titleNote, contentNote, keywordsList } = this.state.infoNote;
+
+    const idEditNote = this.state.notesList.findIndex((note, id) => {
+      return note.id === this.state.idChooseNote;
+    });
+
+    const date = new Date();
+    const noteDate = date.toLocaleString();
+
+    const note = {
+      id: `${this.state.idChooseNote}`,
+      title: `${titleNote}`,
+      content: `${contentNote}`,
+      keywords: `${keywordsList}`,
+      date: noteDate,
+    };
+
+    this.setState((prevState) => {
+      const notesList = [...prevState.notesList];
+      notesList[idEditNote] = note;
+      return {
+        statusAddEditNote: true,
+        notesList,
+      };
+    });
+  };
+
   // clear
 
   clearIdChooseNote = () => {
@@ -353,6 +383,7 @@ class RouteSections extends Component {
                 clearField={this.clearField}
                 statusAddEditNote={this.state.statusAddEditNote}
                 handleAddKeyword={this.handleAddKeyword}
+                handleSaveEditNote={this.handleSaveEditNote}
               />
             );
           }}

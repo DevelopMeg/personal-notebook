@@ -15,7 +15,7 @@ const EditNote = (props) => {
   return (
     <>
       <h2>Edit your note</h2>
-      <form>
+      <form onSubmit={props.handleSaveEditNote}>
         <label htmlFor="title">title</label>
         <input
           type="text"
