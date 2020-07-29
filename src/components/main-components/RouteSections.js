@@ -17,6 +17,7 @@ class RouteSections extends Component {
       keywordsList: [],
     },
     statusAddNote: false,
+    statusAddEditNote: false,
     notesList: [],
 
     filterNotesList: [],
@@ -255,6 +256,12 @@ class RouteSections extends Component {
     });
   };
 
+  clearStatusAddEditNote = () => {
+    this.setState({
+      statusAddEditNote: false,
+    });
+  };
+
   clearSearchCategory = () => {
     this.setState({
       chooseSearchCategory: "",
@@ -329,6 +336,7 @@ class RouteSections extends Component {
                 clearIdChooseNote={this.clearIdChooseNote}
                 clearField={this.clearField}
                 handleEditFillField={this.handleEditFillField}
+                clearStatusAddEditNote={this.clearStatusAddEditNote}
               />
             );
           }}
@@ -340,6 +348,11 @@ class RouteSections extends Component {
               <EditNoteBox
                 notesList={this.state.notesList}
                 idChooseNote={this.state.idChooseNote}
+                infoNote={this.state.infoNote}
+                handleChangeValueInfoNote={this.handleChangeValueInfoNote}
+                clearField={this.clearField}
+                statusAddEditNote={this.state.statusAddEditNote}
+                handleAddKeyword={this.handleAddKeyword}
               />
             );
           }}

@@ -13,6 +13,7 @@ const NoteBox = (props) => {
         note={note}
         clearIdChooseNote={props.clearIdChooseNote}
         clearField={props.clearField}
+        clearStatusAddEditNote={props.clearStatusAddEditNote}
         handleEditFillField={props.handleEditFillField}
       />
     );

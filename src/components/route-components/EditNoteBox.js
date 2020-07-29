@@ -1,5 +1,6 @@
 import React from "react";
 import EditNote from "../subcomponents/EditNoteBoxComponents/EditNote";
+import { NavLink } from "react-router-dom";
 
 const EditNoteBox = (props) => {
   const filterNote = props.notesList.filter((note) => {
@@ -7,10 +8,22 @@ const EditNoteBox = (props) => {
   });
 
   const editNote = filterNote.map((note, id) => {
-    return <EditNote key={id} note={note} />;
+    return (
+      <EditNote
+        key={id}
+        note={note}
+        infoNote={props.infoNote}
+        handleChangeValueInfoNote={props.handleChangeValueInfoNote}
+        handleAddKeyword={props.handleAddKeyword}
+        statusAddEditNote={props.statusAddEditNote}
+      />
+    );
   });
   return (
     <>
+      <NavLink to="/your-note" onClick={props.clearField}>
+        come back
+      </NavLink>
       <section>{editNote}</section>
     </>
   );

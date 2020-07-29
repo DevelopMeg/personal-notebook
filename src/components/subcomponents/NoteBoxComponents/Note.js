@@ -27,6 +27,7 @@ const Note = (props) => {
             props.note.content,
             props.note.keywords
           );
+          props.clearStatusAddEditNote();
         }}
       >
         edit
