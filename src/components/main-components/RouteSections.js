@@ -294,6 +294,7 @@ class RouteSections extends Component {
         titleNote: "",
         contentNote: "",
         keywordsList: [],
+        keywordsNote: "",
       },
     }));
   };

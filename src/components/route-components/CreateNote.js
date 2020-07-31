@@ -1,15 +1,25 @@
 import React from "react";
-import { NavLink, Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 
 const CreateNote = (props) => {
+  const history = useHistory();
+  const handleComeBack = () => {
+    history.push("/");
+  };
+
   const { titleNote, contentNote, keywordsNote, keywordsList } = props.infoNote;
 
   return (
     <section>
       <h2>Create new note</h2>
-      <NavLink to="/" onClick={props.clearField}>
+      <button
+        onClick={() => {
+          handleComeBack();
+          props.clearField();
+        }}
+      >
         come back
-      </NavLink>
+      </button>
       <form onSubmit={props.handleAddNote}>
         <label htmlFor="title">title</label>
         <input

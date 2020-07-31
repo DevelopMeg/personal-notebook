@@ -1,8 +1,14 @@
 import React from "react";
 import EditNote from "../subcomponents/EditNoteBoxComponents/EditNote";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const EditNoteBox = (props) => {
+  const history = useHistory();
+
+  const handleComeBack = () => {
+    history.push("/your-note");
+  };
+
   const filterNote = props.notesList.filter((note) => {
     return note.id === props.idChooseNote;
   });
@@ -23,9 +29,14 @@ const EditNoteBox = (props) => {
   });
   return (
     <>
-      <NavLink to="/your-note" onClick={props.clearField}>
+      <button
+        onClick={() => {
+          handleComeBack();
+          props.clearField();
+        }}
+      >
         come back
-      </NavLink>
+      </button>
       <section>{editNote}</section>
     </>
   );

@@ -1,27 +1,36 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const Note = (props) => {
+  const history = useHistory();
+  const handleComeBack = () => {
+    history.push("/your-notes");
+  };
+
+  const handleOpenEdit = () => {
+    history.push("/edit-note");
+  };
+
   return (
     <section>
-      <NavLink
-        to="/your-notes"
+      <button
         onClick={() => {
+          handleComeBack();
           props.clearIdChooseNote();
-
           props.clearField();
         }}
       >
         come back
-      </NavLink>
+      </button>
       <h2>your note</h2>
       <h3>{props.note.title}</h3>
       <p>{props.note.date}</p>
       <p>{props.note.keywords}</p>
       <p>{props.note.content}</p>
-      <NavLink
-        to="/edit-note"
+
+      <button
         onClick={() => {
+          handleOpenEdit();
           props.handleEditFillField(
             props.note.title,
             props.note.content,
@@ -31,7 +40,7 @@ const Note = (props) => {
         }}
       >
         edit
-      </NavLink>
+      </button>
     </section>
   );
 };

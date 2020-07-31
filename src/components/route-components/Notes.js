@@ -1,12 +1,17 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 import SearchNotes from "../subcomponents/NotesComponents/SearchNotes";
 import SortNotes from "../subcomponents/NotesComponents/SortNotes";
 import CountNotes from "../subcomponents/NotesComponents/CountNotes";
 import StickyNotes from "../subcomponents/NotesComponents/StickyNotes";
 import NoNotes from "../subcomponents/NotesComponents/NoNotes";
+import { useHistory } from "react-router-dom";
 
 const Notes = (props) => {
+  const history = useHistory();
+  const handleComeBack = () => {
+    history.push("/");
+  };
+
   let list;
   if (props.valueSearchNote.length !== 0) {
     list = props.filterNotesList;
@@ -18,9 +23,7 @@ const Notes = (props) => {
 
   return (
     <>
-      <NavLink to="/" exact>
-        come back
-      </NavLink>
+      <button onClick={handleComeBack}>come back</button>
       <h2>your notes</h2>
 
       <SearchNotes
