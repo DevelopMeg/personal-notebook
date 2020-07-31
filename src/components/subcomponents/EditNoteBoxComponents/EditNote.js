@@ -48,7 +48,10 @@ const EditNote = (props) => {
           >
             add keyword
           </button>
-          <div className="keyword-list">{keywords}</div>
+
+          {keywords.length !== 0 ? (
+            <div className="keyword-list">{keywords}</div>
+          ) : null}
         </div>
 
         <input type="submit" value="save changes"></input>

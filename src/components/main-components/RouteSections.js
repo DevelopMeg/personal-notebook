@@ -219,7 +219,13 @@ class RouteSections extends Component {
   // edit note
 
   handleEditFillField = (title, content, keywords) => {
-    const keywordsList = keywords.split(",");
+    let keywordsList;
+
+    if (keywords.length !== 0) {
+      keywordsList = keywords.split(",");
+    } else {
+      keywordsList = [];
+    }
 
     this.setState((prevState) => ({
       infoNote: {

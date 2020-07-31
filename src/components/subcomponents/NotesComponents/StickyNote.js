@@ -12,7 +12,7 @@ const StickyNote = (props) => {
       <button onClick={props.handleDeleteNote}>X</button>
       <p>{props.note.date}</p>
       <h3>{props.note.title}</h3>
-      <p>{props.note.keywords}</p>
+      {props.note.keywords.length !== 0 ? <p>{props.note.keywords}</p> : null}
       <button
         onClick={() => {
           handleOpenMoreInfo();
