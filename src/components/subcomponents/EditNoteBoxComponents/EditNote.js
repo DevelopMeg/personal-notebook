@@ -54,7 +54,17 @@ const EditNote = (props) => {
           ) : null}
         </div>
 
-        <input type="submit" value="save changes"></input>
+        <input
+          type="submit"
+          value="save changes"
+          disabled={
+            titleNote.length === 0 ||
+            contentNote.length === 0 ||
+            keywordsNote.length !== 0
+              ? true
+              : false
+          }
+        ></input>
       </form>
 
       {props.statusAddEditNote ? <Redirect to="/your-note" /> : null}

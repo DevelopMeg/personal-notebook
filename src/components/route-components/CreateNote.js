@@ -59,7 +59,11 @@ const CreateNote = (props) => {
           type="submit"
           value="add note"
           disabled={
-            titleNote.length === 0 || contentNote.length === 0 ? true : false
+            titleNote.length === 0 ||
+            contentNote.length === 0 ||
+            keywordsNote.length !== 0
+              ? true
+              : false
           }
         />
 
