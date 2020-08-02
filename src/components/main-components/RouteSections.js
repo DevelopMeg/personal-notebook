@@ -29,9 +29,22 @@ class RouteSections extends Component {
     idChooseNote: "",
   };
 
+  // local storage
+
+  componentDidMount() {
+    localStorage.getItem("notesList") &&
+      this.setState({
+        notesList: JSON.parse(localStorage.getItem("notesList")),
+      });
+  }
+
   // sort notes
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevState.notesList !== this.state.notesList) {
+      localStorage.setItem("notesList", JSON.stringify(this.state.notesList));
+    }
+
     if (prevState.valueSortNote !== this.state.valueSortNote) {
       const notesList = [...this.state.notesList];
       let sortNotesList;
