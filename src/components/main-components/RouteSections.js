@@ -347,6 +347,8 @@ class RouteSections extends Component {
       valueSortNote,
       filterNotesList,
       sortNotesList,
+      idChooseNote,
+      statusAddEditNote,
     } = this.state;
 
     return (
@@ -399,8 +401,8 @@ class RouteSections extends Component {
           render={() => {
             return (
               <NoteBox
-                notesList={this.state.notesList}
-                idChooseNote={this.state.idChooseNote}
+                notesList={notesList}
+                idChooseNote={idChooseNote}
                 clearIdChooseNote={this.clearIdChooseNote}
                 clearField={this.clearField}
                 handleEditFillField={this.handleEditFillField}
@@ -414,12 +416,12 @@ class RouteSections extends Component {
           render={() => {
             return (
               <EditNoteBox
-                notesList={this.state.notesList}
-                idChooseNote={this.state.idChooseNote}
-                infoNote={this.state.infoNote}
+                notesList={notesList}
+                idChooseNote={idChooseNote}
+                infoNote={infoNote}
                 handleChangeValueInfoNote={this.handleChangeValueInfoNote}
                 clearField={this.clearField}
-                statusAddEditNote={this.state.statusAddEditNote}
+                statusAddEditNote={statusAddEditNote}
                 handleAddKeyword={this.handleAddKeyword}
                 handleSaveEditNote={this.handleSaveEditNote}
                 handleDeleteKeyword={this.handleDeleteKeyword}

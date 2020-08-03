@@ -17,7 +17,6 @@ const EditNoteBox = (props) => {
     return (
       <EditNote
         key={id}
-        note={note}
         infoNote={props.infoNote}
         handleChangeValueInfoNote={props.handleChangeValueInfoNote}
         handleAddKeyword={props.handleAddKeyword}

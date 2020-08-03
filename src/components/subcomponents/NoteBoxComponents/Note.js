@@ -11,6 +11,8 @@ const Note = (props) => {
     history.push("/edit-note");
   };
 
+  const { title, date, keywords, content } = props.note;
+
   return (
     <section>
       <button
@@ -23,19 +25,15 @@ const Note = (props) => {
         come back
       </button>
       <h2>your note</h2>
-      <h3>{props.note.title}</h3>
-      <p>{props.note.date}</p>
-      <p>{props.note.keywords}</p>
-      <p>{props.note.content}</p>
+      <h3>{title}</h3>
+      <p>{date}</p>
+      <p>{keywords}</p>
+      <p>{content}</p>
 
       <button
         onClick={() => {
           handleOpenEdit();
-          props.handleEditFillField(
-            props.note.title,
-            props.note.content,
-            props.note.keywords
-          );
+          props.handleEditFillField(title, content, keywords);
           props.clearStatusAddEditNote();
         }}
       >
