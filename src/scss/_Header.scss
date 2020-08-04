@@ -1,0 +1,58 @@
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 12vh;
+
+  &__title {
+    margin: 0 16px 0 0;
+    text-transform: uppercase;
+    font-family: 'Love Ya Like A Sister', cursive;
+    font-weight: 400;
+    font-size: 2.5rem;
+  }
+
+  &__image {
+    height: 42px;
+    display: block;
+  }
+}
+
+@media(min-width: 400px) {
+  .head {
+    &__title {
+      font-size: 3rem;
+      margin-right: 20px;
+    }
+
+    &__image {
+      height: 46px;
+    }
+  }
+}
+
+@media(min-width: 1024px) {
+  .head {
+    &__title {
+      font-size: 3.5rem;
+      margin-right: 25px;
+    }
+
+    &__image {
+      height: 50px;
+    }
+  }
+}
+
+@media(min-width: 1350px) {
+  .head {
+    &__title {
+      font-size: 4rem;
+      margin-right: 30px;
+    }
+
+    &__image {
+      height: 55px;
+    }
+  }
+}

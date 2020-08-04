@@ -3,13 +3,16 @@ import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 import RouteSections from "./RouteSections";
+import "../../scss/styles.scss";
 
 const App = () => {
   return (
     <div className="wrapper">
       <BrowserRouter>
         <Header />
-        <RouteSections />
+        <main className="main">
+          <RouteSections />
+        </main>
         <Footer />
       </BrowserRouter>
     </div>

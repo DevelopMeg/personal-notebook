@@ -3,10 +3,10 @@ import ChooseAction from "../subcomponents/ChooseAction";
 
 const WelcomeSection = () => {
   return (
-    <>
-      <h2>Create your notebook</h2>
+    <section className="welcome-section">
+      <h2 className="welcome-section__title">Create your notebook</h2>
       <ChooseAction />
-    </>
+    </section>
   );
 };
 

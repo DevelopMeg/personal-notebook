@@ -3,15 +3,22 @@ import { NavLink } from "react-router-dom";
 
 const ChooseAction = (props) => {
   return (
-    <>
-      <p>ChooseAction</p>
-      <NavLink to="/your-notes" onClick={props.clearStatusAddNote}>
+    <div className="choose-action">
+      <NavLink
+        to="/your-notes"
+        className="choose-action__btn link"
+        onClick={props.clearStatusAddNote}
+      >
         your notes
       </NavLink>
-      <NavLink to="/new-note" onClick={props.clearStatusAddNote}>
+      <NavLink
+        to="/new-note"
+        className="choose-action__btn link"
+        onClick={props.clearStatusAddNote}
+      >
         create new note
       </NavLink>
-    </>
+    </div>
   );
 };
 
