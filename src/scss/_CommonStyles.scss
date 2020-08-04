@@ -18,20 +18,25 @@ body {
  color: #000;
 }
 
-.main {
- background-image: url(../image/main-photo.jpg);
- background-size: cover;
- background-repeat: no-repeat;
- background-position-x: 36%;
- display: flex;
- justify-content: center;
- align-items: center;
- min-height: 78vh;
+.come-back {
+ margin: 0 0 10px 10px;
+ border: 1px solid #000;
+ box-shadow: 0 0 1px 0 #7b8b8c;
+ text-transform: uppercase;
+ padding: 4px 10px;
+ font-size: 1.4rem;
+ border-radius: 20px;
+ background-color: #fff;
 }
 
-@media(min-width: 1350px) {
- .main {
-  width: 80%;
-  margin: 0 auto;
+@media(min-width: 400px) {
+ .come-back {
+  font-size: 1.6rem;
+ }
+}
+
+@media(min-width: 1024px) {
+ .come-back {
+  font-size: 1.8rem;
  }
 }

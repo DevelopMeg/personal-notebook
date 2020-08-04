@@ -7,8 +7,8 @@ const EditNote = (props) => {
   const keywords = keywordsList.map((keyword, id) => {
     return (
       <div key={id} id={id}>
-        <span onClick={props.handleDeleteKeyword}>X</span>
-        <p>{keyword}</p>
+        <span>{keyword}</span>
+        <button onClick={props.handleDeleteKeyword}>X</button>
       </div>
     );
   });
