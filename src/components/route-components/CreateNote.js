@@ -11,10 +11,10 @@ const CreateNote = (props) => {
 
   const keywords = keywordsList.map((keyword, id) => {
     return (
-      <div key={id} id={id} class="keywords-list__keyword">
-        <span class="keywords-list__name-keyword">{keyword}</span>
+      <div key={id} id={id} className="keywords-list__keyword">
+        <span className="keywords-list__name-keyword">{keyword}</span>
         <button
-          class=" keywords-list__delete-keyword"
+          className=" keywords-list__delete-keyword"
           onClick={props.handleDeleteKeyword}
         >
           X

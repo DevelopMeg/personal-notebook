@@ -1,6 +1,6 @@
 .footer {
  text-align: center;
- min-height: 10vh;
+ min-height: 12vh;
  font-size: 1.2rem;
  display: flex;
  flex-direction: column;
@@ -26,12 +26,15 @@
 
 @media(min-width: 1024px) {
  .footer {
+  font-size: 1.5rem;
+ }
+}
+
+@media(min-width: 1440px) {
+ .footer {
   font-size: 1.6rem;
  }
 }
 
-@media(min-width: 1350px) {
- .footer {
-  font-size: 1.8rem;
- }
-}
+
+// zbyt blisko footer do main zero odstepu 1366 x 768

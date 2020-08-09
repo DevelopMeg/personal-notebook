@@ -27,6 +27,14 @@ body {
  font-size: 1.4rem;
  border-radius: 20px;
  background-color: #fff;
+
+ &--notes {
+  margin: 10px 0 0 10px;
+ }
+
+ &--note {
+  margin-top: 10px;
+ }
 }
 
 @media(min-width: 400px) {
@@ -39,4 +47,23 @@ body {
  .come-back {
   font-size: 1.8rem;
  }
+
+ .main {
+  margin: 0 auto;
+  width: 90%;
+ }
 }
+
+@media(min-width: 1200px) {
+ .main {
+  width: 80%;
+ }
+}
+
+@media(min-width: 1600px) {
+ .main {
+  width: 70%;
+ }
+}
+
+// main width 

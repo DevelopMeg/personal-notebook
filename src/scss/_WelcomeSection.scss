@@ -1,5 +1,5 @@
 .welcome-section {
- background-image: url(../image/main-photo.jpg);
+ background-image: url(../image/main-image.jpg);
  background-size: cover;
  background-repeat: no-repeat;
  background-position-x: 36%;
@@ -7,7 +7,7 @@
  flex-direction: column;
  justify-content: center;
  align-items: center;
- min-height: 78vh;
+ min-height: 76vh;
  text-align: center;
 
  &__title {
@@ -36,8 +36,6 @@
 
 @media(min-width: 1350px) {
  .welcome-section {
-  width: 80%;
-  margin: 0 auto;
 
   &__title {
    font-size: 3.5rem;

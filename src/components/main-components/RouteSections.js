@@ -120,7 +120,7 @@ class RouteSections extends Component {
   };
 
   handleChooseSearchCategory = (e) => {
-    const category = e.target.innerText;
+    const category = e.target.innerText.toLowerCase();
 
     this.setState({
       chooseSearchCategory: category,
