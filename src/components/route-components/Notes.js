@@ -22,9 +22,13 @@ const Notes = (props) => {
   }
 
   return (
-    <>
-      <button onClick={handleComeBack}>come back</button>
-      <h2>your notes</h2>
+    <section className="section-notes">
+      <button className="come-back come-back--notes" onClick={handleComeBack}>
+        come back
+      </button>
+      <h2 className="section-notes__title">your notes</h2>
+
+      <div className="section-notes__box-image"></div>
 
       <SearchNotes
         handleChooseSearchCategory={props.handleChooseSearchCategory}
@@ -51,7 +55,7 @@ const Notes = (props) => {
       ) : (
         <NoNotes />
       )}
-    </>
+    </section>
   );
 };
 

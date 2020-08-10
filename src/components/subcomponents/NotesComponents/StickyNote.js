@@ -10,12 +10,19 @@ const StickyNote = (props) => {
   const { id, date, title, keywords } = props.note;
 
   return (
-    <div id={id}>
-      <button onClick={props.handleDeleteNote}>X</button>
-      <p>{date}</p>
-      <h3>{title}</h3>
-      {keywords.length !== 0 ? <p>{keywords}</p> : null}
+    <div id={id} className="sticky-note">
+      <button className="sticky-note__delete" onClick={props.handleDeleteNote}>
+        X
+      </button>
+      <p className="sticky-note__date">{date}</p>
+      <h3 className="sticky-note__title">{title}</h3>
+      {keywords.length !== 0 ? (
+        <p className="sticky-note__keywords">{keywords}</p>
+      ) : (
+        <p>-</p>
+      )}
       <button
+        className="sticky-note__btn-more-info"
         onClick={() => {
           handleOpenMoreInfo();
           props.handleChooseWholeNote(id);

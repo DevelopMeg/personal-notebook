@@ -43,9 +43,17 @@ body {
  }
 }
 
+@media(min-width: 500px) {
+ .come-back {
+  margin-left: 25px;
+ }
+}
+
 @media(min-width: 1024px) {
  .come-back {
+  margin-left: 0;
   font-size: 1.8rem;
+  cursor: pointer;
  }
 
  .main {
@@ -60,10 +68,14 @@ body {
  }
 }
 
-@media(min-width: 1600px) {
+@media(min-width: 1400px) {
  .main {
   width: 70%;
  }
 }
 
-// main width 
+@media(min-width: 1600px) {
+ .main {
+  width: 60%;
+ }
+}

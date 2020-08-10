@@ -26,7 +26,7 @@ const CreateNote = (props) => {
   return (
     <section className="section-create-note">
       <button
-        className="come-back come-back--create-note"
+        className="come-back"
         onClick={() => {
           handleComeBack();
           props.clearField();

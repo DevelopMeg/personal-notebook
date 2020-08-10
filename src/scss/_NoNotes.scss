@@ -31,6 +31,21 @@
 
   &__btn-add-note {
    font-size: 1.5rem;
+   cursor: pointer;
+  }
+ }
+}
+
+@media(min-width:1400px) {
+
+ .section-no-notes {
+
+  &__title {
+   font-size: 1.7rem;
+  }
+
+  &__btn-add-note {
+   font-size: 1.6rem;
   }
  }
 }

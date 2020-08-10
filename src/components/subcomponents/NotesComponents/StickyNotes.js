@@ -12,7 +12,8 @@ const StickyNotes = (props) => {
       />
     );
   });
-  return <section className="sticky-note">{stickyNote}</section>;
+
+  return <section className="section-sticky-notes">{stickyNote}</section>;
 };
 
 export default StickyNotes;

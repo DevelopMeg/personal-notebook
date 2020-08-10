@@ -1,4 +1,4 @@
-P.section-nopage {
+.section-nopage {
  padding-top: 10px;
  min-height: 76vh;
 
@@ -14,6 +14,14 @@ P.section-nopage {
  .section-nopage {
   &__title {
    font-size: 1.8rem;
+  }
+ }
+}
+
+@media(min-width: 1600px) {
+ .section-nopage {
+  &__title {
+   font-size: 2rem;
   }
  }
 }

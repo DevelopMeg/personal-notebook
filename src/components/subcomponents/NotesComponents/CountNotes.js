@@ -2,10 +2,17 @@ import React from "react";
 
 const CountNotes = (props) => {
   return (
-    <div>
-      <p>Count of your notes</p>
-      <p>{props.notesList.length}</p>
-    </div>
+    <section className="section-count-notes">
+      <h3 className="section-count-notes__title">Count of your notes</h3>
+      <p
+        className="section-count-notes__number"
+        style={
+          props.notesList.length !== 0 ? { color: "green" } : { color: "red" }
+        }
+      >
+        {props.notesList.length}
+      </p>
+    </section>
   );
 };
 

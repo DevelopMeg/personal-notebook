@@ -7,6 +7,7 @@ import Notes from "../route-components/Notes";
 import NoteBox from "../route-components/NoteBox";
 import EditNoteBox from "../route-components/EditNoteBox";
 import NoPage from "../route-components/NoPage";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 class RouteSections extends Component {
   state = {
@@ -352,87 +353,109 @@ class RouteSections extends Component {
       statusAddEditNote,
     } = this.state;
 
+    const timeout = { enter: 400, exit: 0 };
+
     return (
-      <Switch>
-        <Route path="/" exact component={WelcomeSection} />{" "}
-        <Route
-          path="/new-note"
-          render={() => {
-            return (
-              <CreateNote
-                infoNote={infoNote}
-                handleChangeValueInfoNote={this.handleChangeValueInfoNote}
-                handleAddNote={this.handleAddNote}
-                handleAddKeyword={this.handleAddKeyword}
-                clearField={this.clearField}
-                statusAddNote={statusAddNote}
-                handleDeleteKeyword={this.handleDeleteKeyword}
-              />
-            );
-          }}
-        />{" "}
-        <Route
-          path="/added-note"
-          render={() => {
-            return <AddedNote clearStatusAddNote={this.clearStatusAddNote} />;
-          }}
-        />{" "}
-        <Route
-          path="/your-notes"
-          render={() => {
-            return (
-              <Notes
-                notesList={notesList}
-                handleChooseSearchCategory={this.handleChooseSearchCategory}
-                chooseSearchCategory={chooseSearchCategory}
-                clearSearchCategory={this.clearSearchCategory}
-                valueSearchNote={valueSearchNote}
-                valueSortNote={valueSortNote}
-                handleChangeValue={this.handleChangeValue}
-                handleSearchNote={this.handleSearchNote}
-                filterNotesList={filterNotesList}
-                sortNotesList={sortNotesList}
-                handleDeleteNote={this.handleDeleteNote}
-                handleChooseWholeNote={this.handleChooseWholeNote}
-              />
-            );
-          }}
-        />{" "}
-        <Route
-          path="/your-note"
-          render={() => {
-            return (
-              <NoteBox
-                notesList={notesList}
-                idChooseNote={idChooseNote}
-                clearIdChooseNote={this.clearIdChooseNote}
-                clearField={this.clearField}
-                handleEditFillField={this.handleEditFillField}
-                clearStatusAddEditNote={this.clearStatusAddEditNote}
-              />
-            );
-          }}
-        />{" "}
-        <Route
-          path="/edit-note"
-          render={() => {
-            return (
-              <EditNoteBox
-                notesList={notesList}
-                idChooseNote={idChooseNote}
-                infoNote={infoNote}
-                handleChangeValueInfoNote={this.handleChangeValueInfoNote}
-                clearField={this.clearField}
-                statusAddEditNote={statusAddEditNote}
-                handleAddKeyword={this.handleAddKeyword}
-                handleSaveEditNote={this.handleSaveEditNote}
-                handleDeleteKeyword={this.handleDeleteKeyword}
-              />
-            );
-          }}
-        />{" "}
-        <Route component={NoPage} />{" "}
-      </Switch>
+      <Route
+        render={({ location }) => (
+          <TransitionGroup>
+            <CSSTransition
+              classNames="fade"
+              timeout={timeout}
+              key={location.key}
+            >
+              <Switch>
+                <Route path="/" exact component={WelcomeSection} />{" "}
+                <Route
+                  path="/new-note"
+                  render={() => {
+                    return (
+                      <CreateNote
+                        infoNote={infoNote}
+                        handleChangeValueInfoNote={
+                          this.handleChangeValueInfoNote
+                        }
+                        handleAddNote={this.handleAddNote}
+                        handleAddKeyword={this.handleAddKeyword}
+                        clearField={this.clearField}
+                        statusAddNote={statusAddNote}
+                        handleDeleteKeyword={this.handleDeleteKeyword}
+                      />
+                    );
+                  }}
+                />{" "}
+                <Route
+                  path="/added-note"
+                  render={() => {
+                    return (
+                      <AddedNote clearStatusAddNote={this.clearStatusAddNote} />
+                    );
+                  }}
+                />{" "}
+                <Route
+                  path="/your-notes"
+                  render={() => {
+                    return (
+                      <Notes
+                        notesList={notesList}
+                        handleChooseSearchCategory={
+                          this.handleChooseSearchCategory
+                        }
+                        chooseSearchCategory={chooseSearchCategory}
+                        clearSearchCategory={this.clearSearchCategory}
+                        valueSearchNote={valueSearchNote}
+                        valueSortNote={valueSortNote}
+                        handleChangeValue={this.handleChangeValue}
+                        handleSearchNote={this.handleSearchNote}
+                        filterNotesList={filterNotesList}
+                        sortNotesList={sortNotesList}
+                        handleDeleteNote={this.handleDeleteNote}
+                        handleChooseWholeNote={this.handleChooseWholeNote}
+                      />
+                    );
+                  }}
+                />{" "}
+                <Route
+                  path="/your-note"
+                  render={() => {
+                    return (
+                      <NoteBox
+                        notesList={notesList}
+                        idChooseNote={idChooseNote}
+                        clearIdChooseNote={this.clearIdChooseNote}
+                        clearField={this.clearField}
+                        handleEditFillField={this.handleEditFillField}
+                        clearStatusAddEditNote={this.clearStatusAddEditNote}
+                      />
+                    );
+                  }}
+                />{" "}
+                <Route
+                  path="/edit-note"
+                  render={() => {
+                    return (
+                      <EditNoteBox
+                        notesList={notesList}
+                        idChooseNote={idChooseNote}
+                        infoNote={infoNote}
+                        handleChangeValueInfoNote={
+                          this.handleChangeValueInfoNote
+                        }
+                        clearField={this.clearField}
+                        statusAddEditNote={statusAddEditNote}
+                        handleAddKeyword={this.handleAddKeyword}
+                        handleSaveEditNote={this.handleSaveEditNote}
+                        handleDeleteKeyword={this.handleDeleteKeyword}
+                      />
+                    );
+                  }}
+                />
+                <Route component={NoPage} />
+              </Switch>
+            </CSSTransition>
+          </TransitionGroup>
+        )}
+      />
     );
   }
 }
