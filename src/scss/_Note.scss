@@ -1,0 +1,157 @@
+.section-note {
+ min-height: 76vh;
+
+ &__box-image {
+  position: relative;
+  background-image: url("../image/note-image.jpg");
+  background-size: cover;
+  background-position-x: 44%;
+  z-index: 1;
+  min-height: 65vh;
+
+  &::after {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #ffffffa8;
+   z-index: -1;
+  }
+ }
+
+ &__title {
+  margin: 10px 0 20px;
+  padding: 10px 0;
+  background-color: #efe8e8;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+ }
+}
+
+.note {
+ background-color: #fff1c8;
+ width: 90%;
+ margin: 0 auto;
+ padding: 25px;
+ border-top-right-radius: 40px;
+ border-bottom-left-radius: 40px;
+
+ &__title {
+  margin: 0 0 25px;
+  text-align: center;
+  border-bottom: 2px dashed #b3aaaa;
+  padding-bottom: 10px;
+  font-size: 1.9rem;
+ }
+
+ &__date,
+ &__keywords {
+  margin: 6px 0;
+  font-size: 1.4rem;
+ }
+
+ &__btn-edit {
+  display: block;
+  margin: 0 auto;
+  width: 65%;
+  padding: 5px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.5rem;
+  border: 2px dashed #b3aaaa;
+  background-color: #fff;
+ }
+
+ &__content {
+  margin: 25px 0;
+ }
+}
+
+@media(min-width: 400px) {
+
+ .section-note {
+  &__title {
+   margin-bottom: 40px;
+  }
+ }
+
+ .note {
+  width: 80%;
+ }
+}
+
+@media(min-width: 500px) {
+ .note {
+  width: 70%;
+ }
+}
+
+@media(min-width: 1024px) {
+
+ .section-note {
+  padding: 0 0 20px;
+
+  &__title {
+   margin-top: 20px;
+  }
+
+  &__box-image {
+   margin: 0 auto;
+   width: 80%;
+   background-position-y: 100%;
+  }
+ }
+
+ .note {
+  margin: 0 auto;
+  width: 50%;
+
+  &__title {
+   font-size: 1.9rem;
+  }
+
+  &__btn-edit {
+   width: 55%;
+   cursor: pointer;
+  }
+
+  &__date,
+  &__keywords {
+   font-size: 1.5rem;
+  }
+
+  &__content {
+   font-size: 1.8rem;
+  }
+ }
+}
+
+@media(min-width: 1600px) {
+
+ .section-note {
+  &__title {
+   font-size: 2.8rem;
+  }
+ }
+
+ .note {
+  width: 45%;
+
+  &__title {
+   font-size: 2.2rem;
+  }
+
+  &__date,
+  &__keywords,
+  &__btn-edit {
+   font-size: 1.7rem;
+  }
+
+  &__content {
+   font-size: 2rem;
+  }
+ }
+}

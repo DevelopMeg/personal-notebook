@@ -14,8 +14,9 @@ const Note = (props) => {
   const { title, date, keywords, content } = props.note;
 
   return (
-    <section>
+    <>
       <button
+        className="come-back come-back--note"
         onClick={() => {
           handleComeBack();
           props.clearIdChooseNote();
@@ -24,22 +25,27 @@ const Note = (props) => {
       >
         come back
       </button>
-      <h2>your note</h2>
-      <h3>{title}</h3>
-      <p>{date}</p>
-      <p>{keywords}</p>
-      <p>{content}</p>
+      <div className="section-note__box-image">
+        <h2 className="section-note__title">your note</h2>
+        <section className="note">
+          <h3 className="note__title">{title}</h3>
+          <p className="note__date">{date}</p>
+          <p className="note__keywords">{keywords}</p>
+          <p className="note__content">{content}</p>
 
-      <button
-        onClick={() => {
-          handleOpenEdit();
-          props.handleEditFillField(title, content, keywords);
-          props.clearStatusAddEditNote();
-        }}
-      >
-        edit
-      </button>
-    </section>
+          <button
+            className="note__btn-edit"
+            onClick={() => {
+              handleOpenEdit();
+              props.handleEditFillField(title, content, keywords);
+              props.clearStatusAddEditNote();
+            }}
+          >
+            edit
+          </button>
+        </section>
+      </div>
+    </>
   );
 };
 

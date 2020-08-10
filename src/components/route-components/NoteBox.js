@@ -19,7 +19,7 @@ const NoteBox = (props) => {
     );
   });
 
-  return <section>{note}</section>;
+  return <section className="section-note">{note}</section>;
 };
 
 export default NoteBox;

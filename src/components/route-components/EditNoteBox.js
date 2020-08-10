@@ -1,14 +1,7 @@
 import React from "react";
 import EditNote from "../subcomponents/EditNoteBoxComponents/EditNote";
-import { useHistory } from "react-router-dom";
 
 const EditNoteBox = (props) => {
-  const history = useHistory();
-
-  const handleComeBack = () => {
-    history.push("/your-note");
-  };
-
   const filterNote = props.notesList.filter((note) => {
     return note.id === props.idChooseNote;
   });
@@ -23,22 +16,11 @@ const EditNoteBox = (props) => {
         statusAddEditNote={props.statusAddEditNote}
         handleSaveEditNote={props.handleSaveEditNote}
         handleDeleteKeyword={props.handleDeleteKeyword}
+        clearField={props.clearField}
       />
     );
   });
-  return (
-    <>
-      <button
-        onClick={() => {
-          handleComeBack();
-          props.clearField();
-        }}
-      >
-        come back
-      </button>
-      <section>{editNote}</section>
-    </>
-  );
+  return <section className="section-edit-note">{editNote}</section>;
 };
 
 export default EditNoteBox;
