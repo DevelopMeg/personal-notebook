@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/personal-notebook/static/css/main.cdc429f9.chunk.css",
+    "main.js": "/personal-notebook/static/js/main.551e513f.chunk.js",
+    "main.js.map": "/personal-notebook/static/js/main.551e513f.chunk.js.map",
+    "runtime-main.js": "/personal-notebook/static/js/runtime-main.35f84b82.js",
+    "runtime-main.js.map": "/personal-notebook/static/js/runtime-main.35f84b82.js.map",
+    "static/css/2.8ff17cee.chunk.css": "/personal-notebook/static/css/2.8ff17cee.chunk.css",
+    "static/js/2.42d7435d.chunk.js": "/personal-notebook/static/js/2.42d7435d.chunk.js",
+    "static/js/2.42d7435d.chunk.js.map": "/personal-notebook/static/js/2.42d7435d.chunk.js.map",
+    "index.html": "/personal-notebook/index.html",
+    "precache-manifest.1494f22173f3d05100ecc4205a627aed.js": "/personal-notebook/precache-manifest.1494f22173f3d05100ecc4205a627aed.js",
+    "service-worker.js": "/personal-notebook/service-worker.js",
+    "static/css/2.8ff17cee.chunk.css.map": "/personal-notebook/static/css/2.8ff17cee.chunk.css.map",
+    "static/css/main.cdc429f9.chunk.css.map": "/personal-notebook/static/css/main.cdc429f9.chunk.css.map",
+    "static/js/2.42d7435d.chunk.js.LICENSE.txt": "/personal-notebook/static/js/2.42d7435d.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "/personal-notebook/static/media/notes-image-mobile.77fd8d45.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.35f84b82.js",
+    "static/css/2.8ff17cee.chunk.css",
+    "static/js/2.42d7435d.chunk.js",
+    "static/css/main.cdc429f9.chunk.css",
+    "static/js/main.551e513f.chunk.js"
+  ]
+}
