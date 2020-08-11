@@ -7,8 +7,8 @@ const Footer = () => {
         <p className="copyright__text">
           DevelopMeg 2020 &copy; All right reserved
         </p>
-         <p className="copyright__text">
-          Main photo in page by{" "}
+        <p className="copyright__text">
+          Photos in page by{" "}
           <a className="link" href=" https://unsplash.com/">
             Unsplash
           </a>
@@ -19,7 +19,6 @@ const Footer = () => {
             Icons8
           </a>
         </p>
-
       </div>
     </footer>
   );
