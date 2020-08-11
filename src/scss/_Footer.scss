@@ -1,11 +1,8 @@
 .footer {
- text-align: center;
+ @include handleFlexColumnCenter();
  min-height: 12vh;
+ text-align: center;
  font-size: 1.2rem;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
 }
 
 .copyright {

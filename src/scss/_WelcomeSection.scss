@@ -1,12 +1,9 @@
 .welcome-section {
+ @include handleFlexColumnCenter();
  background-image: url("../image/main-image.jpg");
  background-size: cover;
  background-repeat: no-repeat;
  background-position-x: 36%;
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
  min-height: 76vh;
  text-align: center;
 

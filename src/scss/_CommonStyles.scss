@@ -13,6 +13,24 @@ body {
  font-family: 'Roboto', sans-serif;
 }
 
+.fade-appear,
+.fade-enter {
+ opacity: 0;
+ z-index: 1;
+}
+
+.fade-appear-active,
+.fade-enter.fade-enter-active {
+ opacity: 1;
+ transition: opacity 400ms linear 100ms;
+}
+
+.fade-exit,
+.fade-exit.fade-exit-active {
+ opacity: 0;
+}
+
+
 .link {
  text-decoration: none;
  color: #000;
@@ -21,10 +39,10 @@ body {
 .come-back {
  margin: 0 0 10px 10px;
  border: 1px solid #000;
- box-shadow: 0 0 1px 0 #7b8b8c;
- text-transform: uppercase;
  padding: 4px 10px;
  font-size: 1.4rem;
+ text-transform: uppercase;
+ box-shadow: 0 0 1px 0 #7b8b8c;
  border-radius: 20px;
  background-color: #fff;
 

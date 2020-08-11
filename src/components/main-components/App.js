@@ -8,7 +8,7 @@ import "../../scss/styles.scss";
 const App = () => {
   return (
     <div className="wrapper">
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Header />
         <main className="main">
           <RouteSections />

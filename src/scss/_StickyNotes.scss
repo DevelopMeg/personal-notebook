@@ -1,18 +1,16 @@
 .section-sticky-notes {
- position: relative;
  padding-top: 40px;
  display: flex;
  flex-wrap: wrap;
  justify-content: center;
+ position: relative;
 
  &::before {
   content: "";
   position: absolute;
-  transform: translateX(-50%);
   top: 24px;
-  left: 50%;
-  height: 2px;
-  width: 75%;
+  @include handleCenteringX();
+  @include handleSize(75%, 2px);
   background-color: #000;
   border-radius: 40px;
  }
@@ -20,31 +18,29 @@
  &::after {
   content: "";
   position: absolute;
-  transform: translateX(-50%);
   top: 20px;
-  left: 50%;
+  @include handleCenteringX();
+  @include handleSize(10px, 10px);
   background-color: #000;
   border-radius: 40px;
-  width: 10px;
-  height: 10px;
  }
 }
 
 .sticky-note {
- position: relative;
- flex-basis: 80%;
- border: 4px double #69655d;
  margin: 20px 0;
  padding: 15px;
- background-color: #fff1c8;
+ border: 4px double $darkGrey;
+ position: relative;
+ flex-basis: 80%;
+ background-color: $delicateYellow;
 
  &__delete {
+  border: 1px solid #b1ada5;
   position: absolute;
   top: 0;
   right: 0;
   font-weight: 600;
   background-color: #d2cec7;
-  border: 1px solid #b1ada5;
  }
 
  &__date {
@@ -57,12 +53,12 @@
  }
 
  &__btn-more-info {
-  display: block;
+  border: 1px solid #000;
   margin: 0 auto;
   padding: 6px 10px;
+  display: block;
   width: 60%;
   font-size: 1.5rem;
-  border: 1px solid #000;
   text-transform: uppercase;
   background-color: #fff;
  }
@@ -83,10 +79,10 @@
 @media(min-width: 1024px) {
 
  .section-sticky-notes {
-  width: 80%;
   padding-top: 60px;
   margin: 0 auto;
   justify-content: space-around;
+  width: 80%;
 
   &::before {
    width: 40%;
@@ -110,10 +106,9 @@
   }
 
   &__btn-more-info {
-   width: 50%;
-   height: 30px;
-   line-height: 28px;
    padding: 0;
+   @include handleSize(50%, 30px);
+   line-height: 28px;
    cursor: pointer;
   }
  }

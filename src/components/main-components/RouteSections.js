@@ -364,7 +364,7 @@ class RouteSections extends Component {
               timeout={timeout}
               key={location.key}
             >
-              <Switch>
+              <Switch location={location}>
                 <Route path="/" exact component={WelcomeSection} />{" "}
                 <Route
                   path="/new-note"
