@@ -1,9 +1,35 @@
-## personal-notebook
+# personal-notebook
 
-#### This is an application, which let you save your notes.
+> This is my old project (which doesn`t contain aspects I learned from feedback), but shows progress of my skills
 
-Project was created with [Create React App](https://github.com/facebook/create-react-app). Additionaly I used React Router, SCSS, RWD, BEM, Local Storage.
+#### This is an application, which let you save your notes
+
+Link: https://developmeg.github.io/personal-notebook/
 
 ---
 
-Link: https://developmeg.github.io/personal-notebook/
+![screen home page](./public/screens/screen1.png)
+
+![screen add note page](./public/screens/screen2.png)
+
+![screen notes page](./public/screens/screen3.png)
+
+## Technologies
+
+- React (Create React App)
+- React Router
+- Local Storage
+- SCSS
+- BEM
+
+#### Extra Packages
+
+- react-transition-group
+
+## Installation
+
+Clone this repository and install dependencies: `npm install`
+
+Next run application on your localhost: `npm start`
+
+To build project : `npm run build`
