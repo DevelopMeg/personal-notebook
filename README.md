@@ -1,6 +1,6 @@
 # personal-notebook
 
-> This is my old project (which doesn`t contain aspects I learned from feedback), but shows progress of my skills
+> This is my old project, but shows progress of my skills
 
 #### This is an application, which let you save your notes
 
